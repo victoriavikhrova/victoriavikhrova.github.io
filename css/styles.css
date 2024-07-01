@@ -1,0 +1,80 @@
+/* used to reset everything */
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: 'PT Sans', sans-serif, Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% viewport height */
+}
+
+header {
+    background-color: #387301;
+    color: white;
+    padding: 0.5em;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    flex: 1; /* This allows the main content to take up available space */
+}
+
+footer {
+    background-color: #387301;
+    color: white;
+    padding: 0.5em;
+}
+
+.checklist {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.checklist label {
+    font-size: 20px;
+    max-width: 50em;
+    white-space: normal;
+    display: inline-block; /* To respect the width constraints */
+}
+
+#listOfChecklists {
+    padding: 0;
+    padding-left: 1em;
+}
+
+#uncheckButton {
+    margin-left: 0.3em;
+    width: 10em;
+}
+
+#indexLink {
+    display: block;
+    background-color: #387301;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    margin: 0.3em 0.3em;
+    cursor: pointer;
+    width: 7em;
+}
