@@ -28,16 +28,14 @@ function bulletPointsToChecklist(bulletPointString) {
     const parts = bulletPoint.trim().split(/-(.+)/); // split by first dash
     const item = parts.length > 1 ? parts[1].trim() : "";
 
-    const checkbox = `
-        <li>
-            <label>
-                <input type="checkbox"> ${item}
-            </label>
-        </li>`.trim();
-    result += checkbox;
-    result += "\n";
+    const checkbox = `                <li>
+                    <label>
+                        <input type="checkbox"> ${item}
+                    </label>
+                </li>`;
+    result += checkbox + "\n";
   });
-  result += "</ul>";
+  result += "            </ul>";
   return result;
 }
 
@@ -45,41 +43,38 @@ function createHtml(title, bulletPointString) {
   const checklist = bulletPointsToChecklist(bulletPointString);
 
   return `
-        <!DOCTYPE html>
-        <html lang="ru">
+    <!DOCTYPE html>
+    <html lang="ru">
 
-        <head>
-            <title>${title}</title> <!-- Вставляем название здесь -->
+    <head>
+        <title>${title}</title>
 
-            <link rel="icon" type="image/jpg" href="../images/favicon.png" />
-            <link rel="shortcut icon" type="image/jpg" href="../images/favicon.png" />
-            <link rel="apple-touch-icon" type="image/jpg" href="../images/favicon.png" />
+        <link rel="icon" type="image/png" href="../images/favicon.png" />
+        <link rel="apple-touch-icon" type="image/png" href="../images/favicon.png" />
 
-            <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
 
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
-        <body>
-            <header>
-                <h1>${title}</h1> <!-- Вставляем название здесь -->
-            </header>
+    <body>
+        <header>
+            <h1>${title}</h1>
+        </header>
 
-            <main>
-                <!-- Меняем ниже этой строки -->
-                ${checklist}
-                <!-- Меняем выше этой строки -->
+        <main>
+            ${checklist}
 
-                <button id="uncheckButton">Снять выделение</button>
-                <a id="indexLink" href="../index.html">На главную</a>
-            </main>
+            <button id="uncheckButton">Снять выделение</button>
+            <a id="indexLink" href="../index.html">На главную</a>
+        </main>
 
-            <footer>
-                <p>© 2024</p>
-            </footer>
-            <script src="../js/main.js"></script>
-        </body>
+        <footer>
+            <p>© 2024</p>
+        </footer>
+        <script src="../js/main.js"></script>
+    </body>
 
-        </html>`.trim();
+    </html>`;
 }
